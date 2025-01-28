@@ -56,13 +56,27 @@ const PackageSchema = new Schema({
     type: String,
     required: true
   },
-  checkpoints: {
-  type: [{ 
-    location: String, 
-    timestamp: Date 
-  }],
-  default: []
-}
+  currentLocation: {
+    type: String,
+    required: true
+  },
+  checkpoint1: {
+    type: String,
+    // required: true
+  },
+  checkpoint2: {
+    type: String,
+    // required: true
+  },
+  checkpoint3: {
+    type: String,
+    // required: true
+  },
+  checkpoint4: {
+    type: String,
+    // required: true
+  },
+ 
 }, {
   timestamps: true // automatically add createdAt and updatedAt fields
 });

@@ -19,6 +19,7 @@ router.post("/create", async (req, res) => {
       contentName,
       contentWeight,
       deliveryStatus
+
     } = req.body;
 
     // Check if a package with the same trackingId already exists
@@ -28,21 +29,7 @@ router.post("/create", async (req, res) => {
     }
 
     // Create a new package instance
-    const newPackage = new Package({
-      trackingId,
-      senderName,
-      senderEmail,
-      senderPhone,
-      senderLocation,
-      receiverName,
-      receiverEmail,
-      receiverPhone,
-      receiverLocation,
-      deliveryMode,
-      contentName,
-      contentWeight,
-      deliveryStatus
-    });
+    const newPackage = new Package(req.body);
 
     // Save the package to the database
     const savedPackage = await newPackage.save();
