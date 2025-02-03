@@ -24,11 +24,11 @@ const PackageSchema = new Schema({
     type: String,
     required: true
   },
-  receiverName: {
+  receiverEmail: {
     type: String,
     required: true
   },
-  receiverEmail: {
+  receiverName: {
     type: String,
     required: true
   },
@@ -50,32 +50,23 @@ const PackageSchema = new Schema({
   },
   contentWeight: {
     type: String,
-    required: true
+  },
+  contentHeight: {
+    type: String,
+  },
+  contentWidth: {
+    type: String,
+  },
+  contentLength: {
+    type: String,
   },
   deliveryStatus: {
     type: String,
-    required: true
   },
   currentLocation: {
     type: String,
-    required: true
   },
-  checkpoint1: {
-    type: String,
-    // required: true
-  },
-  checkpoint2: {
-    type: String,
-    // required: true
-  },
-  checkpoint3: {
-    type: String,
-    // required: true
-  },
-  checkpoint4: {
-    type: String,
-    // required: true
-  },
+
  
 }, {
   timestamps: true // automatically add createdAt and updatedAt fields

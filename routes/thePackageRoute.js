@@ -51,6 +51,8 @@ router.post("/update/:trackingId", async (req, res, next) => {
 
   const updateData = req.body;
 
+  console.log(req.body)
+
   try {
     const package = await Package.findOneAndUpdate({ trackingId }, updateData, { new: true });
 
@@ -58,7 +60,7 @@ router.post("/update/:trackingId", async (req, res, next) => {
       return res.status(400).json({ message: 'Package not found' });
     }
 
-    res.json(package);
+    res.status(200).json(package);
   } catch (error) {
     console.error('Error updating package:', error);
     res.status(500).json({ message: 'Internal server error' });
@@ -82,6 +84,8 @@ router.get("/single/:trackingId", async (req, res, next) => {
   }
 
 });
+
+
 
 router.get("/packages", async (req, res, next) => {
 
