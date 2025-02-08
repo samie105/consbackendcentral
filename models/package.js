@@ -66,6 +66,12 @@ const PackageSchema = new Schema({
   currentLocation: {
     type: String,
   },
+  paymentStatus: {
+    type: String,
+  },
+  amountPaid: {
+    type: String,
+  },
 
  
 }, {
