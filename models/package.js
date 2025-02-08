@@ -68,12 +68,11 @@ const PackageSchema = new Schema({
   },
   paymentStatus: {
     type: String,
+    default: 'awaiting payment'
   },
   amountPaid: {
     type: String,
   },
-
- 
 }, {
   timestamps: true // automatically add createdAt and updatedAt fields
 });
