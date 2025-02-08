@@ -62,6 +62,7 @@ const PackageSchema = new Schema({
   },
   deliveryStatus: {
     type: String,
+    default: 'pending'
   },
   currentLocation: {
     type: String,
