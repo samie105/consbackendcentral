@@ -25,15 +25,14 @@ router.post("/create", async (req, res) => {
     // Check if a package with the same trackingId already exists
     const existingPackage = await Package.findOne({ trackingId });
     if (existingPackage) {
-      return res
-        .status(400)
-        .json({
-          error: true,
-          message: "Package with this tracking ID already exists.",
-        });
+      return res.status(400).json({
+        error: true,
+        message: "Package with this tracking ID already exists.",
+      });
     }
 
     // Create a new package instance
+    req.body.checkpoints = [];
     const newPackage = new Package(req.body);
 
     // Save the package to the database
@@ -43,12 +42,9 @@ router.post("/create", async (req, res) => {
     res.status(201).json(savedPackage);
   } catch (error) {
     // Respond with error details
-    res
-      .status(500)
-      .json({
-        message:
-          error.message || "An error occurred while creating the package.",
-      });
+    res.status(500).json({
+      message: error.message || "An error occurred while creating the package.",
+    });
   }
 });
 
