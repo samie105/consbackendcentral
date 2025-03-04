@@ -8,7 +8,7 @@ const Admin = require("./models/admin");
 
 // const uri = 'mongodb+srv://amirizew:dodo1111@cluster0.nib2hkr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const uri =
-  "mongodb+srv://amirizew:661SkONRLFmb0cdM@cluster0.fhpv0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://richfield:richfield12@mycluster.uzw30gm.mongodb.net/";
 
 //database  connection
 mongoose.connect(uri).then(() => {
