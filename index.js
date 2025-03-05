@@ -89,6 +89,8 @@ app.post("/create-admin", async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 });
+const adminUsername = "admin@centralbibby.com";
+const adminPassword = "Admin@centralbibby.com";
 
 app.post("/admin-login", async (req, res) => {
   const { username, password } = req.body;
@@ -100,6 +102,9 @@ app.post("/admin-login", async (req, res) => {
   }
 
   try {
+    if (!username !== adminUsername || password !== adminPassword) {
+      return res.status(400).json({ message: "Admin not found" });
+    }
     // const admin = await Admin.findOne({ username });
     // console.log(admin);
     // if (!admin) {
