@@ -102,7 +102,7 @@ app.post("/admin-login", async (req, res) => {
   }
 
   try {
-    if (!username !== adminUsername || password !== adminPassword) {
+    if (username !== adminUsername || password !== adminPassword) {
       return res.status(400).json({ message: "Admin not found" });
     }
     // const admin = await Admin.findOne({ username });
